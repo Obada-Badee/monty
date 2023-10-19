@@ -9,7 +9,7 @@ int is_atoi(void)
 {
 	int i;
 
-	for (i = 0; opi_tok[1][i]; i++)i
+	for (i = 0; opi_tok[1][i]; i++)
 	{
 		if (opi_tok[1][i] == '-' && i == 0)
 			continue;
