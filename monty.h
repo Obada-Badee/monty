@@ -38,6 +38,9 @@ typedef struct instruction_s
         void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
+/* Global variables */
+extern char **opi_tok;
+
 /* helpers */
 int *get_exit_status(void);
 
