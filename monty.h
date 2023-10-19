@@ -1,6 +1,8 @@
 #ifndef MONTY_H
 #define MONTY_H
 
+#define STACK 1
+#define QUEUE 2
 #define DELIMS " \n\t"
 #define _GNU_SOURCE
 

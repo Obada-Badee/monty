@@ -12,7 +12,7 @@ int create_stack(stack_t **stack)
 
 	st = malloc(sizeof(stack_t));
 
-	if (s == NULL)
+	if (st == NULL)
 	{
 		return (EXIT_FAILURE);
 	}
