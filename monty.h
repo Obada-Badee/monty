@@ -52,6 +52,8 @@ extern char **opi_tok;
 int *get_exit_status(void);
 int is_atoi(void);
 char **split_string(const char *str, const char *delimiter);
+void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
+void clean(char **array);
 
 /* stack helpers */
 int create_stack(stack_t **stack);
