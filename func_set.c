@@ -13,12 +13,12 @@ void push(stack_t **stack, unsigned int line_num)
 
 	if (opi_tok[1] == NULL)
 	{
-		argument_not_exist(line_number);
+		argument_not_exist(line_num);
 		return;
 	}
 	if (!is_atoi())
 	{
-		argument_not_exist(line_number);
+		argument_not_exist(line_num);
 		return;
 	}
 	new = malloc(sizeof(stack_t));

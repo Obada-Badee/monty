@@ -12,7 +12,7 @@ void argument_not_exist(int line_num)
 {
 	int *exit_status = get_exit_status();
 
-	fprintf(stderr, "L%d: usage: push integer\n", line_number);
+	fprintf(stderr, "L%d: usage: push integer\n", line_num);
 	*exit_status = EXIT_FAILURE;
 }
 
