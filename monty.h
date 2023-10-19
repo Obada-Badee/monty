@@ -38,4 +38,12 @@ typedef struct instruction_s
         void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
+/* helpers */
+int *get_exit_status(void);
+
+/* errors handlers */
+void argument_not_exist(int line_num);
+
+
+
 #endif /* MONTY_H */
