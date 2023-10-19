@@ -18,8 +18,8 @@ int main(int argc, char **argv)
 	}
 	else
 	{
-		script = fopen(argv[1], "r");
-		if (script == NULL)
+		page = fopen(argv[1], "r");
+		if (page == NULL)
 		{
 			cant_open_file(argv[1]);
 		}

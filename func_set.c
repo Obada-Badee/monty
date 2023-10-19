@@ -52,10 +52,11 @@ void push(stack_t **stack, unsigned int line_num)
 /**
  * pall - Prints all the elements in the stack
  * @stack: The stack to be printed
+ * @line_num: Its not used but important
  *
  * Return: void
  */
-void pall(stack_t **stack)
+void pall(stack_t **stack, __attribute__((unused))unsigned int line_num)
 {
 	stack_t *tmp = (*stack)->next;
 

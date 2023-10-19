@@ -22,6 +22,32 @@ opi_func *get_func(char *op_code)
 
 	return (NULL);
 }
+
+/**
+ * check_delim - Check the line for delimitires
+ * @line: The line
+ * @delim: The Delimeters to be searched
+ *
+ * Return: 1 or 0
+ */
+int check_delim(char *line, char *delim)
+{
+        int i, j;
+
+        for (i = 0; line[i]; i++)
+        {
+                for (j = 0; delim[j]; j++)
+                {
+                        if (line[i] == delim[j])
+                                break;
+                }
+                if (delim[j] == '\0')
+                        return (0);
+        }
+
+        return (1);
+}
+
 /**
  * read_page - Reads the instruction page one by one 
  * @page: A pointer to the page 
@@ -67,30 +93,4 @@ void read_page(FILE *page)
 	}
 	free_stack(stack);
 	free(line);
-}
-
-
-/**
- * check_delim - Check the line for delimitires
- * @line: The line
- * @delim: The Delimeters to be searched
- *
- * Return: 1 or 0
- */
-int check_delim(char *line, char *delim)
-{
-	int i, j;
-
-	for (i = 0; line[i]; i++)
-	{
-		for (j = 0; delim[j]; j++)
-		{
-			if (line[i] == delim[j])
-				break;
-		}
-		if (delim[j] == '\0')
-			return (0);
-	}
-
-	return (1);
 }
