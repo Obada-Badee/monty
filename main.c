@@ -12,10 +12,23 @@ int main(int argc, char **argv)
 	int *exit_status = get_exit_status();
 	FILE *page = NULL;
 
-	page = fopen(argv[1], "r");
-
-	read_page(page);
-	fclose(script);
+	if (argc != 2)
+	{
+		argc_err();
+	}
+	else
+	{
+		script = fopen(argv[1], "r");
+		if (script == NULL)
+		{
+			cant_open_file(argv[1]);
+		}
+		else
+		{
+			read_page(page);
+			fclose(page);
+		}
+	}
 
 	return (*exit_status);
 }
