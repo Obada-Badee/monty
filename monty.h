@@ -1,6 +1,9 @@
 #ifndef MONTY_H
 #define MONTY_H
 
+#define DELIMS " \n\t"
+#define _GNU_SOURCE
+
 /* Inclusions */
 #include <stdio.h>
 #include <stdlib.h>
@@ -44,9 +47,23 @@ extern char **opi_tok;
 /* helpers */
 int *get_exit_status(void);
 
+/* stack helpers */
+int create_stack(stack_t **stack);
+void free_stack(stack_t *stack);
+
 /* errors handlers */
 void argument_not_exist(int line_num);
+void op_not_exist(char *op_code, int line_num);
+void cant_open_file(char *file);
+void argc_err(void);
 
+/* Read Function */
+void read_page(FILE *page);
+void malloc_err(void);
+
+/* Operation Functions */
+void push(stack_t **stack, unsigned int line_num);
+void pall(stack_t **stack);
 
 
 #endif /* MONTY_H */
