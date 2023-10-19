@@ -5,7 +5,7 @@
  *
  * Return: A pointer to the function or NULL 
  */
-op_func *get_func(char *op_code)
+opi_func *get_func(char *op_code)
 {
 	int i;
 	instruction_t op_funcs[] = {
@@ -33,17 +33,17 @@ void read_page(FILE *page)
 	int line_num = 0, *exit_status = get_exit_status();
 	size_t len;
 	opi_func *func;
-	char *line = NULL
+	char *line = NULL;
 	stack_t *stack = NULL;
 
-	*exit_status = init_stack(&stack);
+	*exit_status = create_stack(&stack);
 	if (*exit_status == EXIT_FAILURE)
 		return;
 
 	while ((getline(&line, &len, page) != -1))
 	{
 		line_num++;
-		if (is_empty(line, DELIMS) || line[0] == '#')
+		if (check_delim(line, DELIMS) || line[0] == '#')
 			continue;
 		opi_tok = split_string(line, DELIMS);
 		if (opi_tok == NULL)
@@ -57,11 +57,11 @@ void read_page(FILE *page)
 		if (func == NULL)
 		{
 			op_not_exist(opi_tok[0], line_num);
-			clean(op_tokens);
+			clean(opi_tok);
 			break;
 		}
 		func(&stack, line_num);
-		clean(op_tokens);
+		clean(opi_tok);
 		if (*exit_status == EXIT_FAILURE)
 			break;
 	}
