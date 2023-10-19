@@ -43,6 +43,8 @@ typedef struct instruction_s
         void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
+typedef void opi_func(stack_t **stack, unsigned int line_number);
+
 /* Global variables */
 extern char **opi_tok;
 
