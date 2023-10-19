@@ -50,12 +50,14 @@ extern char **opi_tok;
 
 /* helpers */
 int *get_exit_status(void);
+int is_atoi(void);
+char **split_string(const char *str, const char *delimiter);
 
 /* stack helpers */
 int create_stack(stack_t **stack);
 void free_stack(stack_t *stack);
 
-/* errors handlers */
+/* error handlers */
 void argument_not_exist(int line_num);
 void op_not_exist(char *op_code, int line_num);
 void cant_open_file(char *file);
