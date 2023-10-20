@@ -66,3 +66,19 @@ void pall(stack_t **stack, __attribute__((unused))unsigned int line_num)
 		tmp = tmp->next;
 	}
 }
+
+/**
+ * pint - Print the elements at the top of the stack
+ * @stack: The stack to print from
+ * @line_num: The line number of the error
+ *
+ * Return: void
+ */
+void pint(stack_t **stack, unsigned int line_num)
+{
+	if ((*stack)->next == NULL)
+		empty_stack(line_num, "can't pint, stack empty");
+	else
+		printf("%d\n", (*stack)->next->n);
+
+}
