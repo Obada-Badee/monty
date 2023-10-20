@@ -104,3 +104,25 @@ void pop(stack_t **stack, unsigned int line_num)
 	free(tmpo);
 
 }
+
+/**
+ * swap - Swap the top two elements of the stack
+ * @stack: The stack to swap in
+ * @line_num: The line number of the error
+ *
+ * Return: void
+ */
+void swap(stack_t **stack, unsigned int line_num)
+{
+	stack_t *top = (*stack)->next;
+	int tmpo;
+
+	if (top == NULL || top->next == NULL)
+	{
+		empty_stack(line_num, "can't swap, stack too short");
+		return;
+	}
+	tmpo = top->n;
+	top->n = top->next->n;
+	top->next->n = tmpo;
+}
