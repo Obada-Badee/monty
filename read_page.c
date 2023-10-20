@@ -15,6 +15,7 @@ opi_func *get_func(char *op_code)
 		{"pint", pint},
 		{"pop", pop},
 		{"swap", swap},
+		{"add", add},
 		{NULL, NULL}
 	};
 
