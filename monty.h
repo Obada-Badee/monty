@@ -72,8 +72,8 @@ void malloc_err(void);
 
 /* Operation Functions */
 void push(stack_t **stack, unsigned int line_num);
-void pall(stack_t **stack, __attribute__((unused))unsigned int line_number);
+void pall(stack_t **stack, __attribute__((unused))unsigned int line_num);
 void pint(stack_t **stack, unsigned int line_num);
-
+void pop(stack_t **stack, unsigned int line_num);
 
 #endif /* MONTY_H */

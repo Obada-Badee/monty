@@ -9,7 +9,7 @@
  */
 void push(stack_t **stack, unsigned int line_num)
 {
-	stack_t *new, *tmp;
+	stack_t *new, *tmpo;
 
 	if (opi_tok[1] == NULL)
 	{
@@ -30,21 +30,21 @@ void push(stack_t **stack, unsigned int line_num)
 	new->n = atoi(opi_tok[1]);
 	if ((*stack)->n == STACK)
 	{
-		tmp = (*stack)->next;
-		new->next = tmp;
+		tmpo = (*stack)->next;
+		new->next = tmpo;
 		new->prev = *stack;
-		if (tmp)
-			(tmp)->prev = new;
+		if (tmpo)
+			(tmpo)->prev = new;
 		(*stack)->next = new;
 	}
 	else
 	{
-		tmp = *stack;
-		while (tmp->next)
-			tmp = tmp->next;
-		tmp->next = new;
+		tmpo = *stack;
+		while (tmpo->next)
+			tmpo = tmpo->next;
+		tmpo->next = new;
 		new->next = NULL;
-		new->prev = tmp;
+		new->prev = tmpo;
 	}
 }
 
@@ -58,12 +58,12 @@ void push(stack_t **stack, unsigned int line_num)
  */
 void pall(stack_t **stack, __attribute__((unused))unsigned int line_num)
 {
-	stack_t *tmp = (*stack)->next;
+	stack_t *tmpo = (*stack)->next;
 
-	while (tmp)
+	while (tmpo)
 	{
-		printf("%d\n", tmp->n);
-		tmp = tmp->next;
+		printf("%d\n", tmpo->n);
+		tmpo = tmpo->next;
 	}
 }
 
@@ -80,5 +80,27 @@ void pint(stack_t **stack, unsigned int line_num)
 		empty_stack(line_num, "can't pint, stack empty");
 	else
 		printf("%d\n", (*stack)->next->n);
+
+}
+
+/**
+ * pop - Remove the elements at the top of the stack
+ * @stack: The stack to remove form
+ * @line_num: The line number of the error
+ *
+ * Return: void
+ */
+void pop(stack_t **stack, unsigned int line_num)
+{
+	stack_t *tmpo = (*stack)->next;
+
+	if (tmpo == NULL)
+	{
+		empty_stack(line_num, "can't pop an empty stack");
+		return;
+	}
+	(*stack)->next = tmpo->next;
+	tmpo->prev = *stack;
+	free(tmpo);
 
 }
