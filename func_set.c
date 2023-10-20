@@ -1,5 +1,4 @@
 #include "monty.h"
-#include "glob.h" 
 
 /**
  * push - Pushs the element to stack/queue
