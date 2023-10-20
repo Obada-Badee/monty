@@ -64,6 +64,7 @@ void argument_not_exist(int line_num);
 void op_not_exist(char *op_code, int line_num);
 void cant_open_file(char *file);
 void argc_err(void);
+void empty_stack(int line_num, char *error_msg);
 
 /* Read Function */
 void read_page(FILE *page);
