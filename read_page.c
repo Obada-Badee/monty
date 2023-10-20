@@ -12,6 +12,7 @@ opi_func *get_func(char *op_code)
 	instruction_t op_funcs[] = {
 		{"push", push},
 		{"pall", pall},
+		{"pint", pint},
 		{NULL, NULL}
 	};
 
