@@ -2,9 +2,9 @@
 #include "glob.h"
 /**
  * get_func - Choose the the function to be executed
- * @op_code: The Function code 
+ * @op_code: The Function code
  *
- * Return: A pointer to the function or NULL 
+ * Return: A pointer to the function or NULL
  */
 opi_func *get_func(char *op_code)
 {
@@ -20,7 +20,6 @@ opi_func *get_func(char *op_code)
 		if (strcmp(op_funcs[i].opcode, op_code) == 0)
 			return (op_funcs[i].f);
 	}
-
 	return (NULL);
 }
 
@@ -33,25 +32,24 @@ opi_func *get_func(char *op_code)
  */
 int check_delim(char *line, char *delim)
 {
-        int i, j;
+	int i, j;
 
-        for (i = 0; line[i]; i++)
-        {
-                for (j = 0; delim[j]; j++)
-                {
-                        if (line[i] == delim[j])
-                                break;
-                }
-                if (delim[j] == '\0')
-                        return (0);
-        }
-
-        return (1);
+	for (i = 0; line[i]; i++)
+	{
+		for (j = 0; delim[j]; j++)
+		{
+			if (line[i] == delim[j])
+				break;
+		}
+		if (delim[j] == '\0')
+			return (0);
+	}
+	return (1);
 }
 
 /**
- * read_page - Reads the instruction page one by one 
- * @page: A pointer to the page 
+ * read_page - Reads the instruction page one by one
+ * @page: A pointer to the page
  *
  * Return: void
  */

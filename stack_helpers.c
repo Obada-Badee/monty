@@ -26,7 +26,7 @@ int create_stack(stack_t **stack)
 }
 
 /**
- * free_stack - Frees the memory occupied by stack 
+ * free_stack - Frees the memory occupied by stack
  * @stack: The stack to be freed
  *
  * Return: void

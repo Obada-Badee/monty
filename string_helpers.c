@@ -1,9 +1,9 @@
 #include "monty.h"
 
 /**
- * is_atoi - It checks for a string is only numbers 
+ * is_atoi - It checks for a string is only numbers
  *
- * Return: 1 if number, 0 if not 
+ * Return: 1 if number, 0 if not
  */
 int is_atoi(void)
 {

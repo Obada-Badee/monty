@@ -1,7 +1,7 @@
 #include "monty.h"
 
 /**
- * get_exit_status - Gets the last exit status and save it 
+ * get_exit_status - Gets the last exit status and save it
  *
  * Return: Pointer to last saved exit status
  */

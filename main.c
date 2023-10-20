@@ -1,7 +1,7 @@
 #include "monty.h"
 
 /**
- * main - Main Func. to run the monty file 
+ * main - Main Func. to run the monty file
  * @argc: Number of arguments
  * @argv: The arguments array
  *
