@@ -1,4 +1,4 @@
-#ifndef GLOB
-#define GLOB char **opi_tok = NULL
-GLOB;
+#ifndef INIT
+#define INIT char **opi_tok = NULL
+INIT;
 #endif
